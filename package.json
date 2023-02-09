@@ -1,7 +1,7 @@
 {
   "name": "jrnl",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple CLI tool to write a plain text journal",
   "type": "module",
   "main": "index.js",
   "bin": {
