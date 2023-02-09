@@ -4,7 +4,7 @@ import { create } from "./commands/create.js";
 import { view } from "./commands/view.js";
 
 program
-  .command("create")
+  .command("create", { isDefault: true })
   .description("Create a new entry for today or edit an existing one")
   .action(create);
 
