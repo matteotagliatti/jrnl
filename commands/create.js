@@ -1,8 +1,12 @@
-import os from "os";
-import fs from "fs";
-const homedir = os.homedir();
-const foldername = ".journal";
-const separator = "---";
+import {
+  fs,
+  homedir,
+  foldername,
+  separator,
+  todayFile,
+  year,
+  month,
+} from "../utils/shared.js";
 
 import { createInterface } from "readline";
 const readline = createInterface({
@@ -15,12 +19,6 @@ export function create() {
     fs.mkdirSync(`${homedir}/${foldername}`);
   }
 
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const filename = `${day}.md`;
-
   if (!fs.existsSync(`${homedir}/${foldername}/${year}`)) {
     fs.mkdirSync(`${homedir}/${foldername}/${year}`);
   }
@@ -29,7 +27,6 @@ export function create() {
     fs.mkdirSync(`${homedir}/${foldername}/${year}/${month}`);
   }
 
-  const todayFile = `${homedir}/${foldername}/${year}/${month}/${filename}`;
   if (!fs.existsSync(todayFile)) {
     fs.writeFileSync(todayFile, "", { overwrite: false });
     readline.question(`Write today entry ${separator} `, (answer) => {

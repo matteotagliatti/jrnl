@@ -1,16 +1,6 @@
-import os from "os";
-import fs from "fs";
-const homedir = os.homedir();
-const foldername = ".journal";
+import { fs, todayFile } from "../utils/shared.js";
 
 export function view(date) {
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth() + 1;
-  const day = today.getDate();
-  const filename = `${day}.md`;
-  const todayFile = `${homedir}/${foldername}/${year}/${month}/${filename}`;
-
   if (date === undefined) {
     console.log("Please provide a date");
     return;
@@ -19,6 +9,9 @@ export function view(date) {
   if (date === "today") {
     if (fs.existsSync(todayFile)) {
       console.log(fs.readFileSync(todayFile, "utf8"));
+    } else {
+      console.log("No entry for today");
     }
+    return;
   }
 }
