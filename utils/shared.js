@@ -5,11 +5,11 @@ const foldername = ".journal";
 const separator = "---";
 
 const today = new Date();
-const year = today.getFullYear();
-const month = today.getMonth() + 1;
-const day = today.getDate();
-const filename = `${day}.md`;
-const todayFile = `${homedir}/${foldername}/${year}/${month}/${filename}`;
+const todayYear = today.getFullYear();
+const todayMonth = today.getMonth() + 1;
+const todayDay = today.getDate();
+const todayFileName = `${todayDay}.md`;
+const todayFile = `${homedir}/${foldername}/${todayYear}/${todayMonth}/${todayFileName}`;
 
 export {
   fs,
@@ -18,8 +18,7 @@ export {
   separator,
   todayFile,
   today,
-  year,
-  month,
-  day,
-  filename,
+  todayYear,
+  todayMonth,
+  todayFileName,
 };

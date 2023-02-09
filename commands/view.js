@@ -25,7 +25,6 @@ export function view(date) {
     month = month[0] === "0" ? month[1] : month;
     if (fs.existsSync(`${homedir}/${foldername}/${year}/${month}`)) {
       day = day[0] === "0" ? day[1] : day;
-
       if (
         fs.existsSync(`${homedir}/${foldername}/${year}/${month}/${day}.md`)
       ) {

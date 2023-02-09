@@ -4,8 +4,8 @@ import {
   foldername,
   separator,
   todayFile,
-  year,
-  month,
+  todayYear,
+  todayMonth,
 } from "../utils/shared.js";
 
 import { createInterface } from "readline";
@@ -19,12 +19,12 @@ export function create() {
     fs.mkdirSync(`${homedir}/${foldername}`);
   }
 
-  if (!fs.existsSync(`${homedir}/${foldername}/${year}`)) {
-    fs.mkdirSync(`${homedir}/${foldername}/${year}`);
+  if (!fs.existsSync(`${homedir}/${foldername}/${todayYear}`)) {
+    fs.mkdirSync(`${homedir}/${foldername}/${todayYear}`);
   }
 
-  if (!fs.existsSync(`${homedir}/${foldername}/${year}/${month}`)) {
-    fs.mkdirSync(`${homedir}/${foldername}/${year}/${month}`);
+  if (!fs.existsSync(`${homedir}/${foldername}/${todayYear}/${todayMonth}`)) {
+    fs.mkdirSync(`${homedir}/${foldername}/${todayYear}/${todayMonth}`);
   }
 
   if (!fs.existsSync(todayFile)) {
