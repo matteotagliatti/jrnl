@@ -11,14 +11,4 @@ const todayDay = today.getDate();
 const todayFileName = `${todayDay}.md`;
 const todayFile = `${homedir}/${foldername}/${todayYear}/${todayMonth}/${todayFileName}`;
 
-export {
-  fs,
-  homedir,
-  foldername,
-  separator,
-  todayFile,
-  today,
-  todayYear,
-  todayMonth,
-  todayFileName,
-};
+export { fs, homedir, foldername, separator, todayFile, todayYear, todayMonth };
