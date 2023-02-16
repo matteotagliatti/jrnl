@@ -32,11 +32,13 @@ export function create() {
     readline.question(`Write today entry ${separator} `, (answer) => {
       fs.appendFileSync(todayFile, `${answer}`);
       readline.close();
+      console.clear();
     });
   } else {
     readline.question(`Append today entry ${separator} `, (answer) => {
       fs.appendFileSync(todayFile, `\r\n\r\n${answer}`);
       readline.close();
+      console.clear();
     });
   }
 }
