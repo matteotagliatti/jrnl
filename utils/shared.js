@@ -11,4 +11,21 @@ const todayDay = today.getDate();
 const todayFileName = `${todayDay}.md`;
 const todayFile = `${homedir}/${foldername}/${todayYear}/${todayMonth}/${todayFileName}`;
 
-export { fs, homedir, foldername, separator, todayFile, todayYear, todayMonth };
+const yesterday = new Date();
+yesterday.setDate(yesterday.getDate() - 1);
+const yesterdayYear = yesterday.getFullYear();
+const yesterdayMonth = yesterday.getMonth() + 1;
+const yesterdayDay = yesterday.getDate();
+const yesterdayFileName = `${yesterdayDay}.md`;
+const yesterdayFile = `${homedir}/${foldername}/${yesterdayYear}/${yesterdayMonth}/${yesterdayFileName}`;
+
+export {
+  fs,
+  homedir,
+  foldername,
+  separator,
+  todayFile,
+  yesterdayFile,
+  todayYear,
+  todayMonth,
+};
