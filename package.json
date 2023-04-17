@@ -1,6 +1,6 @@
 {
   "name": "@matteotagliatti/jrnl",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple CLI tool to write a plain text journal",
   "type": "module",
   "main": "index.js",
