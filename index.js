@@ -2,6 +2,7 @@
 import { program } from "commander";
 import { create } from "./commands/create.js";
 import { view } from "./commands/view.js";
+import { update } from "./commands/update.js";
 
 program
   .command("create", { isDefault: true })
@@ -12,5 +13,10 @@ program
   .command("view <date>")
   .description("View a journal entry (dateformat: YYYY-MM-DD)")
   .action(view);
+
+program
+  .command("update")
+  .description("Update the Git repository")
+  .action(update);
 
 program.parse();
