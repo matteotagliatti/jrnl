@@ -3,7 +3,7 @@ import { exec } from "child_process";
 export function update() {
   execute("git add .");
   execute("git commit -m 'update'");
-  execute("git push");
+  execute("git push origin master");
   process.exit();
 }
 
