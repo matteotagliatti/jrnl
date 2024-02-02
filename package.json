@@ -1,9 +1,12 @@
 {
-  "name": "@matteotagliatti/jrnl",
+  "name": "jrnl",
   "version": "1.0.2",
   "description": "Simple CLI tool to write a plain text journal",
   "type": "module",
   "main": "index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github/@matteotagliatti"
+  },
   "bin": {
     "jrnl": "./index.js"
   },
