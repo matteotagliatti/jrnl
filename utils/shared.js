@@ -1,31 +1,17 @@
-import os from "os";
 import fs from "fs";
-const homedir = os.homedir();
-const foldername = ".journal";
 const separator = "---";
 
 const today = new Date();
 const todayYear = today.getFullYear();
 const todayMonth = today.getMonth() + 1;
 const todayDay = today.getDate();
-const todayFileName = `${todayDay}.md`;
-const todayFile = `${homedir}/${foldername}/${todayYear}/${todayMonth}/${todayFileName}`;
+const todayFile = `${todayYear}-${todayMonth}-${todayDay}.md`;
 
 const yesterday = new Date();
 yesterday.setDate(yesterday.getDate() - 1);
 const yesterdayYear = yesterday.getFullYear();
 const yesterdayMonth = yesterday.getMonth() + 1;
 const yesterdayDay = yesterday.getDate();
-const yesterdayFileName = `${yesterdayDay}.md`;
-const yesterdayFile = `${homedir}/${foldername}/${yesterdayYear}/${yesterdayMonth}/${yesterdayFileName}`;
+const yesterdayFile = `${yesterdayYear}-${yesterdayMonth}-${yesterdayDay}.md`;
 
-export {
-  fs,
-  homedir,
-  foldername,
-  separator,
-  todayFile,
-  yesterdayFile,
-  todayYear,
-  todayMonth,
-};
+export { fs, separator, todayFile, yesterdayFile };
